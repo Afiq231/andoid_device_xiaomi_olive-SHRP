@@ -37,6 +37,7 @@ jobs:
            source build/envsetup.sh
            lunch omni_${DEVICE}-eng
            make recoveryimage
+           ls
 
 workflows:
   version: 2.1
