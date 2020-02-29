@@ -38,7 +38,7 @@ jobs:
            lunch omni_${DEVICE}-eng
            make recoveryimage
            ls
-
+           cp ./out/target/product/olive/recovery.img ./ 
 workflows:
   version: 2.1
   cooking:
