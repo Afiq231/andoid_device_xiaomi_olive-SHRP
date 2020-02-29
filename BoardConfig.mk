@@ -132,3 +132,30 @@ TARGET_OTA_ASSERT_DEVICE := olive
 BOARD_NEEDS_VENDORIMAGE_SYMLINK := false
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
+
+# NOTE - Dont use '-' or blank spaces in flag values , otherwise it will create build errors or other bugs in recovery (Excluding SHRP_PATH,SHRP_REC). 
+# Path of your SHRP Tree
+SHRP_PATH := device/xiaomi/olive
+# Maintainer name
+SHRP_MAINTAINER := afiqqo
+# Device codename
+SHRP_DEVICE_CODE := olive
+# put this 0 if device has no EDL mode
+SHRP_EDL_MODE := 0
+SHRP_EXTERNAL := /external_sd
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usb_otg
+# Put 0 to disable flashlight
+SHRP_FLASH := 0
+# These are led paths, find yours then put here (Optional)
+SHRP_FONP_1 := /sys/class/leds/led:torch_0/brightness
+SHRP_FONP_2 := /sys/class/leds/led:torch_1/brightness
+SHRP_FONP_3 := /sys/class/leds/led:switch/brightness
+# Max Brightness of LED (Optional)
+SHRP_FLASH_MAX_BRIGHTNESS := 200
+# Check your device's recovery path, dont use blindly
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+# Recovery Type (It can be treble,normal,SAR) [Only for About Section]
+SHRP_REC_TYPE := SAR
+# Recovery Type (It can be A/B or A_only) [Only for About Section]
+SHRP_DEVICE_TYPE := A/B
