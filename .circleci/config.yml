@@ -29,7 +29,7 @@ jobs:
            git config --global user.email "${GIT_EMAIL}"
            git config --global user.name "{GIT_NAME}"
            git config --global color.ui false
-           repo init -u --depth-1 git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git -b ${SHRP_MANIFEST}
+           repo init --depth=1 -u git://github.com/SKYHAWK-Recovery-Project/platform_manifest_twrp_omni.git -b ${SHRP_MANIFEST}
            repo sync
            git clone https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} device/${VENDOR}/${DEVICE}
            export ALLOW_MISSING_DEPENDENCIES=true
