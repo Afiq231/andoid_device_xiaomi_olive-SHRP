@@ -22,8 +22,7 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-# Inherit from PitchBlack Heat♥
-$(call inherit-product, vendor/pb/config/common.mk)
+$(call inherit-product, vendor/shrp/config/common.mk)
 
 PRODUCT_PACKAGES += \
     charger_res_images \
