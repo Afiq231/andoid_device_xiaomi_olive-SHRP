@@ -14,6 +14,7 @@ jobs:
       - run:
           command: |
            apt-get -y update
+           apt-get -y install git
            export DEBIAN_FRONTEND=noninteractive
            apt-get install -y tzdata
            ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
@@ -40,9 +41,12 @@ jobs:
            make recoveryimage
            ls
            cp ./out/target/product/olive/recovery.img ./
-           rmega-up recovery.img -u afiqqo231@gmail.com
-           AFiq987567
-workflows:
+           mkdir ./uploaded./
+           cp ./recovery.img ./uploaded/
+           cd ./uploaded/
+           git init
+           git remote add origin https://github.com/Afiq231/uploaded.git
+           git push origin master
   version: 2.1
   cooking:
     jobs:
